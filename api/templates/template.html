@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Health Insurance Prediction - Machine Learning Demonstration</title>
+  </head>
+  <body>
+
+	<div class="container">
+		<h1>Health Insurance Prediction</h1>
+		<div style="display:table-cell; vertical-align:middle; text-align:center">
+			<img src="static/cover.jpg" width="600px" height="275px" align="center">
+		</div>
+		<br>
+		Here, you can our artificial intelligence algorithm do predict your health insurance cost based on your data! Let's get started:
+		<br><br>
+		<form action="/verify" method="post">
+		  <fieldset class="form-group">
+			<div class="row">
+			  <legend class="col-form-label col-sm-2 pt-0">Sex</legend>
+			  <div class="col-sm-10">
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="gridRadioSex" id="gridRadios1" value="male" checked>
+				  <label class="form-check-label" for="gridRadios1">
+					Male
+				  </label>
+				</div>
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="gridRadioSex" id="gridRadios2" value="female">
+				  <label class="form-check-label" for="gridRadios2">
+					Female
+				  </label>
+				</div>
+			  </div>
+			</div>
+		  </fieldset>
+		  <div class="form-group row">
+			<label for="AgeValue" class="col-sm-2 col-form-label">Age:</label>
+			<div class="col-sm-3">
+			  <input type="number" class="form-control" value="20" name="AgeValue" min="0" max="100">
+			</div>
+		  </div>
+
+		  </fieldset>
+		  <div class="form-group row">
+			<label for="HeightValue" class="col-sm-2 col-form-label">Height (cm):</label>
+			<div class="col-sm-3">
+			  <input type="number" class="form-control" value="150" name="HeightValue" min="0" max="250">
+			</div>
+		  </div>
+
+		  </fieldset>
+		  <div class="form-group row">
+			<label for="WeightValue" class="col-sm-2 col-form-label">Weight (kg):</label>
+			<div class="col-sm-3">
+			  <input type="number" class="form-control" value="50" name="WeightValue" min="2" max="200">
+			</div>
+		  </div>
+
+		  </fieldset>
+		  <div class="form-group row">
+			<label for="ChildrenValue" class="col-sm-2 col-form-label">Number of children:</label>
+			<div class="col-sm-3">
+			  <input type="number" class="form-control" value="0" name="ChildrenValue" min="0" max="15">
+			</div>
+		  </div>
+
+
+		  <fieldset class="form-group">
+			<div class="row">
+			  <legend class="col-form-label col-sm-2 pt-0">Smoker</legend>
+			  <div class="col-sm-10">
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="gridRadioSmoker" id="gridRadios3" value="yes" checked>
+				  <label class="form-check-label" for="gridRadios3">
+					Yes
+				  </label>
+				</div>
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="gridRadioSmoker" id="gridRadios4" value="no">
+				  <label class="form-check-label" for="gridRadios4">
+					No
+				  </label>
+				</div>
+			  </div>
+			</div>
+			<br>
+			<fieldset class="form-group">
+			<div class="row">
+			  <legend class="col-form-label col-sm-2 pt-0">Region</legend>
+			  <div class="col-sm-10">
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="gridRadioRegion" id="gridRadios5" value="southwest" checked>
+				  <label class="form-check-label" for="gridRadios5">
+					Southwest
+				  </label>
+				</div>
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="gridRadioRegion" id="gridRadios6" value="southeast">
+				  <label class="form-check-label" for="gridRadios6">
+					Southeast
+				  </label>
+				</div>
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="gridRadioRegion" id="gridRadios7" value="northwest">
+				  <label class="form-check-label" for="gridRadios7">
+					Northwest
+				  </label>
+				</div>
+				<div class="form-check">
+				  <input class="form-check-input" type="radio" name="gridRadioRegion" id="gridRadios8" value="northeast">
+				  <label class="form-check-label" for="gridRadios8">
+					Northeast
+				  </label>
+				</div>
+				<br>
+				<div class="col-sm-10">
+			  <button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+				<br>
+			  </div>
+			</div>
+		  
+
+		</form>
+
+		<h1 class="text-center">{{output}}</h1>
+		<br>
+		<h3 class="text-center"><a href="/" class="btn btn-lg btn-primary" title="">Try Again!</a></h3>
+		<br><br><br>
+		Author: João Paulo Brum
+		<br>
+		Date: 13/09/2020
+		<br>
+		<a href="https://github.com/jooaobrum">Visit my Github</a>
+	<!-- FIM DO CONTAINER-->
+	</div>
+	
+	
+		<!-- Optional JavaScript -->
+		<!-- onkeyup="formatarMoeda2();" -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script>
+	 
+  </body>
+  
+  
+  
+</html>
