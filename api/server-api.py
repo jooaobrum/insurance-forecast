@@ -8,8 +8,8 @@ from sklearn.compose import ColumnTransformer
 import pandas as pd
 
 app = Flask(__name__, static_url_path = '/static')
-model = joblib.load('model/final_model.pkl', protocol = 2)
-full_pipeline = joblib.load('model/pipeline.pkl' , protocol = 2)
+model = joblib.load('model/final_model.pkl')
+full_pipeline = joblib.load('model/pipeline.pkl')
 
 @app.route('/')
 def home():
