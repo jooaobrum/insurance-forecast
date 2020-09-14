@@ -25,7 +25,7 @@ def verify():
 	weight = float(request.form['WeightValue'])
 	children = float(request.form['ChildrenValue'])
 	smoker = request.form['gridRadioSmoker']
-	region = request.form['gridRegion']
+	region = request.form['gridRadioRegion']
 
 	print('Dados de teste:')
 	print('Age: {}'.format(age))
@@ -37,7 +37,7 @@ def verify():
 	print('Region: {}'.format(region))
 	
 	BMI = weight/(height*10**-2)**2
-	print(type(age), type(sex), type(BMI), type(children), type(smoker), type(region))
+	
 	test = pd.DataFrame({
     'index' : [0],
     'age' : age,
@@ -53,13 +53,14 @@ def verify():
 	
 	test_prepared = full_pipeline.transform(test)
 
-	
 
 	charge_predicted = model.predict(test_prepared)[0]
-	output_text = 'Predicted cost for the insurance: {} dollars.'.format(charge_predicted)
+	output_text = 'Predicted cost for the insurance: {0:.2f} dollars.'.format(charge_predicted)
 	print(output_text)
 
-	return render_template('template.html', output= 'Predicted cost for the insurance: {0:.2f} dollars.'.format(charge_predicted))
+	return render_template('template.html', output=output_text)
+
+
 
 
 if __name__ == '__main__':
