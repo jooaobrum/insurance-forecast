@@ -1,5 +1,5 @@
-install numpy
-install flask
-install joblib
-install scikit-learn==0.22.0
-install pandas
+numpy
+flask
+joblib
+scikit-learn==0.22.0
+pandas

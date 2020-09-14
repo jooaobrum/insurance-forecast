@@ -1,7 +1,6 @@
 import numpy as np 
 import os
 from flask import Flask, request, render_template, make_response
-#from sklearn.externals import joblib
 import joblib
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder
