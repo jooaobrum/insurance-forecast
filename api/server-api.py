@@ -33,23 +33,13 @@ def verify():
 	print('Region: {}'.format(region))
 	
 	BMI = weight/(height*10**-2)**2
-
-	def bmi_categories(bmi):
-  		if BMI <= 18.5:
-    		return 'Underweight'
-  		elif 18.5 < BMI <= 24.9:
-    		return 'Normal'
-  		elif 24.9 < BMI <=29.9:
-    		return 'Overweight'
-  		else:
-    		return 'Obese'
 	
 	test = pd.DataFrame({
     'index' : [0],
     'age' : age,
     'sex' : sex,
     'bmi' : BMI,
-    'bmi_cat' : bmi_categories(BMI)
+    'bmi_cat' : bmi_categories(BMI),
     'children' : children,
     'smoker' : smoker,
     'region' : region
@@ -67,7 +57,15 @@ def verify():
 
 	return render_template('template.html', output=output_text)
 
-
+def bmi_categories(BMI):
+	if BMI <= 18.5:
+		return 'Underweight'
+	elif 18.5 < BMI <= 24.9:
+		return 'Normal'
+	elif 24.9 < BMI <=29.9:
+		return 'Overweight'
+	else:
+		return 'Obese'
 
 
 if __name__ == '__main__':
